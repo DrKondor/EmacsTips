@@ -1,0 +1,22 @@
+# This Code is untested by me. I just need a place to collect some potential fixes before I try to roll my own.
+
+# Stack overflow user kalj:
+;; Make movement keys work like they should
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+; Make horizontal movement cross lines                                    
+(setq-default evil-cross-lines t)
+
+# Stack overflow user PythonNut
+;; kill two birds with one stone using remap: arrow keys and h,j,k,l
+(define-key evil-normal-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-motion-state-map (kbd "<remap> <evil-next-line>") 'evil-next-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-previous-line>") 'evil-previous-visual-line)
+(define-key evil-normal-state-map (kbd "<remap> <evil-backward-char>") 'left-char)
+(define-key evil-motion-state-map (kbd "<remap> <evil-forward-char>") 'right-char)
+(define-key evil-normal-state-map (kbd "<remap> <evil-backward-char>") 'left-char)
+(define-key evil-motion-state-map (kbd "<remap> <evil-forward-char>") 'right-char)
+
